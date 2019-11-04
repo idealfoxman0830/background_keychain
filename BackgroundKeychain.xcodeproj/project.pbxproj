@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7E08A4922370D7B30031072D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E08A4912370D7B30031072D /* AppDelegate.swift */; };
-		7E08A4942370D7B30031072D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E08A4932370D7B30031072D /* SceneDelegate.swift */; };
 		7E08A4962370D7B30031072D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E08A4952370D7B30031072D /* ViewController.swift */; };
 		7E08A4992370D7B30031072D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E08A4972370D7B30031072D /* Main.storyboard */; };
 		7E08A49B2370D7B30031072D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E08A49A2370D7B30031072D /* Assets.xcassets */; };
@@ -19,7 +18,6 @@
 /* Begin PBXFileReference section */
 		7E08A48E2370D7B30031072D /* BackgroundKeychain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackgroundKeychain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E08A4912370D7B30031072D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7E08A4932370D7B30031072D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7E08A4952370D7B30031072D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E08A4982370D7B30031072D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E08A49A2370D7B30031072D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				7E08A4912370D7B30031072D /* AppDelegate.swift */,
-				7E08A4932370D7B30031072D /* SceneDelegate.swift */,
 				7E08A4952370D7B30031072D /* ViewController.swift */,
 				7E08A4972370D7B30031072D /* Main.storyboard */,
 				7E08A49A2370D7B30031072D /* Assets.xcassets */,
@@ -144,7 +141,6 @@
 				7E08A4962370D7B30031072D /* ViewController.swift in Sources */,
 				7E6631C92370E0BA000C5049 /* keychain.swift in Sources */,
 				7E08A4922370D7B30031072D /* AppDelegate.swift in Sources */,
-				7E08A4942370D7B30031072D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +285,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BS677JRE62;
 				INFOPLIST_FILE = BackgroundKeychain/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -307,6 +304,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BS677JRE62;
 				INFOPLIST_FILE = BackgroundKeychain/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
