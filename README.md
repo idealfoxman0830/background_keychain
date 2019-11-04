@@ -23,7 +23,7 @@ https://github.com/evgenyneu/background-keychain.git
 ```
 
 <img src='Images/keychain_demo_1.PNG'
-  alt="Keychain Background Read Demo 1" width='450'>
+  alt="Keychain Background Read Demo 1" width='300'>
 
 
 ### 2. 
