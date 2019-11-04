@@ -1,5 +1,5 @@
 //
-//  Class for accessing a Keychain
+//  Accessing Keychain
 //
 
 import Foundation
@@ -30,11 +30,10 @@ class Keychain {
    
    - parameter accessible: accessibility level.
    
-   - returns: result code, noErr for success.
+   - returns: result code, noErr for success. Returns 42 when failing to convert `value` to data.
    */
-  static func addToKeychain(key: String, value: String, accessible: String) -> OSStatus {
+  static func addToKeychain(key: String, value: String, accessible: CFString) -> OSStatus {
     guard let valueData = value.data(using: String.Encoding.utf8) else {
-      print("Error saving text to Keychain")
       return 42
     }
     

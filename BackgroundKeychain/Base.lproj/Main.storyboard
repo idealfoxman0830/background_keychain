@@ -23,18 +23,49 @@
                                     <action selector="didTouchWriteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tlP-H7-XG2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewM-LZ-9z8">
+                                <rect key="frame" x="8" y="653" width="398" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feU-a9-Y3N">
+                                <rect key="frame" x="188" y="706.5" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7E-Zr-KYJ">
+                                <rect key="frame" x="119.5" y="502" width="175" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Clear Keychain"/>
+                                <connections>
+                                    <action selector="didTouchClearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2D5-mb-gTN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="ewM-LZ-9z8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="0go-Km-aWF"/>
+                            <constraint firstItem="v7E-Zr-KYJ" firstAttribute="top" secondItem="cJ9-9T-BRQ" secondAttribute="bottom" constant="26.5" id="2a9-fy-wVh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ewM-LZ-9z8" secondAttribute="trailing" constant="8" id="3Gd-qb-Fg4"/>
                             <constraint firstItem="cJ9-9T-BRQ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Eg6-zB-dNA"/>
+                            <constraint firstItem="feU-a9-Y3N" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Hyj-f6-u1Z"/>
                             <constraint firstItem="cJ9-9T-BRQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IX2-Lx-mcQ"/>
+                            <constraint firstItem="v7E-Zr-KYJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="S9r-wq-sX8"/>
+                            <constraint firstItem="feU-a9-Y3N" firstAttribute="top" secondItem="ewM-LZ-9z8" secondAttribute="bottom" constant="33" id="eIe-Om-tyB"/>
+                            <constraint firstItem="ewM-LZ-9z8" firstAttribute="top" secondItem="v7E-Zr-KYJ" secondAttribute="bottom" constant="106" id="fBf-Qx-ju5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="feU-a9-Y3N" id="KoG-0U-3rY"/>
+                        <outlet property="statusLabel" destination="ewM-LZ-9z8" id="x2J-0d-orc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="113"/>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
     </scenes>
 </document>
