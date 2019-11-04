@@ -2,6 +2,8 @@ import UIKit
 
 class ViewController: UIViewController {
   
+  let myKey = "My key"
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -13,82 +15,26 @@ class ViewController: UIViewController {
   }
   
   @IBAction func didTouchWriteButton(_ sender: Any) {
-    print("Write")
+    ViewController.deleteFromKeychainIfKeyExists(key: myKey)
   }
   
   /**
-   Delete a key from keychain
+   Delete a key from keychain if the key exists.
    
    - parameter key: Key under which the text value is stored in the keychain.
-   
-   - returns: result code, noErr for success.
    */
-  func deleteFromKeychain(key: String) -> OSStatus {
-    let queryDelete: [String: AnyObject] = [
-      kSecClass as String: kSecClassGenericPassword,
-      kSecAttrAccount as String: key as AnyObject,
-    ]
+  static func deleteFromKeychainIfKeyExists(key: String) {
+    let data = Keychain.readFromKeychain(key: key)
     
-    return SecItemDelete(queryDelete as CFDictionary)
-  }
-  
-  /**
-   Add a key to the keychain
-   
-   - parameter key: Key under which the text value is stored in the keychain.
-   
-   - parameter value: The value to be stored.
-   
-   - returns: result code, noErr for success.
-   */
-  func addToKeychain(key: String, value: String) -> OSStatus {
-    guard let valueData = value.data(using: String.Encoding.utf8) else {
-      print("Error saving text to Keychain")
-      return 42
-    }
-    
-    let queryAdd: [String: AnyObject] = [
-      kSecClass as String: kSecClassGenericPassword,
-      kSecAttrAccount as String: key as AnyObject,
-      kSecValueData as String: valueData as AnyObject,
-      kSecAttrAccessible as String: kSecAttrAccessibleWhenUnlocked,
-    ]
-    
-    return SecItemAdd(queryAdd as CFDictionary, nil)
-  }
-  
-  /**
-   Read from the keychain.
-   
-   - parameter key: Key under which the text value is stored in the keychain.
-   
-   - returns: tuple (value, status). `value` is the stored keychain value. `status` result code, noErr for success.
-   */
-  func readFromKeychain(key: String) -> (value: String?, status: OSStatus) {
-    let queryLoad: [String: AnyObject] = [
-      kSecClass as String: kSecClassGenericPassword,
-      kSecAttrAccount as String: key as AnyObject,
-      kSecReturnData as String: kCFBooleanTrue,
-      kSecMatchLimit as String: kSecMatchLimitOne,
-    ]
-    
-    var result: AnyObject?
-    
-    let resultCodeLoad = withUnsafeMutablePointer(to: &result) {
-      SecItemCopyMatching(queryLoad as CFDictionary, UnsafeMutablePointer($0))
-    }
-    
-    let status = resultCodeLoad
-    var value: String? = nil
-    
-    if resultCodeLoad == noErr {
-      if let result = result as? Data {
-        value = NSString(data: result,
-                         encoding: String.Encoding.utf8.rawValue) as String?
+    if data.value == nil {
+      let deleteStatus = Keychain.deleteFromKeychain(key: key)
+      
+      if deleteStatus != noErr {
+        print("Error deleteing form keychain: \(deleteStatus)")
       }
     }
-    
-    return (value, status)
   }
+  
+  
 }
 
