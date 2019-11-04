@@ -3,7 +3,6 @@ import UIKit
 class ViewController: UIViewController {
   
   let myKey = "My key"
-  let itemValue = "In Keychain: initial write. Lock the device and wait 30 seconds. Then unlock and see of the keychain item was modified."
 
   @IBOutlet weak var errorLabel: UILabel!
   @IBOutlet weak var statusLabel: UILabel!
@@ -13,6 +12,34 @@ class ViewController: UIViewController {
     
     errorLabel.text = ""
     readKeychain()
+    
+    NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification,
+                                           object: nil, queue: nil) {
+                                            [weak self] (notification) in
+        print("App did enter background")
+                                            
+        self?.accessKeychainFromBackground()
+    }
+  }
+  
+  func accessKeychainFromBackground() {
+    // Read from keychain
+    let data = Keychain.readFromKeychain(key: myKey)
+
+    if data.status == errSecItemNotFound {
+      statusLabel.text = "Background: Keychain item does not exist"
+      return
+    }
+
+    if data.status != noErr {
+      showError(text: "Background: Error reading from keychain: \(data.status)")
+    } else {
+      if let value = data.value {
+        statusLabel.text = "Background: successfully read:\n \(value)"
+      } else {
+        statusLabel.text = "Background: successfully read empty value"
+      }
+    }
   }
 
   @IBAction func didTouchClearButton(_ sender: Any) {
@@ -22,8 +49,10 @@ class ViewController: UIViewController {
   
   @IBAction func didTouchWriteButton(_ sender: Any) {
     if !deleteFromKeychainIfKeyExists(key: myKey) { return }
+    
+    let value = "This text is in Keychain. Lock the device, unlock it and see if we could read from the Keychain."
 
-    let writeStatus = Keychain.addToKeychain(key: myKey, value: itemValue,
+    let writeStatus = Keychain.addToKeychain(key: myKey, value: value,
                                             accessible: kSecAttrAccessibleWhenUnlocked)
     
     if writeStatus != noErr {
