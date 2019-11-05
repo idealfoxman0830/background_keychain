@@ -8,7 +8,7 @@ Here is how it works:
 
 - Then we lock the device.
 
-- While in the background, the app reads from Keychain.
+- While in the background, the app reads from Keychain and updates a label on screen.
 
 - We Unlock the device and check if that read was successful.
 
@@ -22,7 +22,7 @@ See the following [discussion](https://github.com/evgenyneu/keychain-swift/pull/
 https://github.com/evgenyneu/background-keychain.git
 ```
 
-<img src='Images/keychain_demo_1.PNG'
+<img src='Images/keychain_demo_1_v2.png'
   alt="Keychain Background Read Demo 1" width='300'>
 
 
