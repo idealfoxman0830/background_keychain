@@ -10,7 +10,7 @@ Here is how it works:
 
 - While in the background, the app reads from Keychain and updates a label on screen.
 
-- We Unlock the device and check if that read was successful.
+- Finally, we unlock the device and check if that read was successful.
 
 This app was created in order to check if it's required to set access access level (`kSecAttrAccessible`) when **reading** from keychain. See the following [discussion](https://github.com/evgenyneu/keychain-swift/pull/123) for more info.
 
