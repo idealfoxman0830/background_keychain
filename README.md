@@ -28,7 +28,7 @@ https://github.com/evgenyneu/background-keychain.git
 
 ### 2. Click "Write to Keychain" button
 
-The app will create a Keychain item with `kSecAttrAccessible` setting set to `kSecAttrAccessibleWhenUnlocked`.
+The app will create a Keychain item with `kSecAttrAccessible` setting set to `accessibleAfterFirstUnlock`.
 
 <img src='Images/keychain_demo_2_v2.png'
   alt="Keychain Background Read Demo 1" width='300'>

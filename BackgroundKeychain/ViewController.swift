@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     let value = "This text is in Keychain. Lock the device, unlock it and see if we could read from the Keychain."
 
     let writeStatus = Keychain.addToKeychain(key: myKey, value: value,
-                                            accessible: kSecAttrAccessibleWhenUnlocked)
+                                            accessible: kSecAttrAccessibleAfterFirstUnlock)
     
     if writeStatus != noErr {
       showError(text: "Error writing to keychain: \(writeStatus)")
