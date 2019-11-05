@@ -26,4 +26,14 @@ https://github.com/evgenyneu/background-keychain.git
   alt="Keychain Background Read Demo 1" width='300'>
 
 
-### 2. 
+### 2. Click "Write to Keychain button"
+
+<img src='Images/keychain_demo_2_v2.png'
+  alt="Keychain Background Read Demo 1" width='300'>
+
+### 3. Lock your device and then unlock it
+
+After entering the background the app will read from the keychain and update a label on screen. After unlocking, you will see if that background read was successful.
+
+<img src='Images/keychain_demo_3_v2.png'
+  alt="Keychain Background Read Demo 1" width='300'>
