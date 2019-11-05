@@ -26,7 +26,7 @@ https://github.com/evgenyneu/background-keychain.git
   alt="Keychain Background Read Demo 1" width='300'>
 
 
-### 2. Click "Write to Keychain button"
+### 2. Click "Write to Keychain" button
 
 <img src='Images/keychain_demo_2_v2.png'
   alt="Keychain Background Read Demo 1" width='300'>
