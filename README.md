@@ -1,6 +1,6 @@
 # Reading from Keychain in the background
 
-This is an iOS demo app that checks if it's required to set access access level (`kSecAttrAccessible`) when **reading** from keychain.
+This is an iOS demo app that reads from Keychain while being in the background.
 
 Here is how it works:
 
@@ -12,7 +12,7 @@ Here is how it works:
 
 - We Unlock the device and check if that read was successful.
 
-See the following [discussion](https://github.com/evgenyneu/keychain-swift/pull/123) for more info.
+This app was created in order to check if it's required to set access access level (`kSecAttrAccessible`) when **reading** from keychain. See the following [discussion](https://github.com/evgenyneu/keychain-swift/pull/123) for more info.
 
 ## How to use
 
@@ -33,7 +33,7 @@ https://github.com/evgenyneu/background-keychain.git
 
 ### 3. Lock your device and then unlock it
 
-After entering the background the app will read from the keychain and update a label on screen. After unlocking, you will see if that background read was successful.
+After entering the background the app will read from the Keychain and update a label on screen. After unlocking, you will see if that background read was successful.
 
 <img src='Images/keychain_demo_3_v2.png'
   alt="Keychain Background Read Demo 1" width='300'>
